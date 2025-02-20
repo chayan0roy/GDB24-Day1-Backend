@@ -1,13 +1,45 @@
 const express = require('express');
-
 const app = express();
 
-app.get('/', function(req,res) {
-    res.send('Hello GDB24')
+const database = require('./config/database');
+
+
+app.get('/', (req, res)=>{
+    res.send('Like Karo follow karo')
 })
 
-app.get('/chicken', function(req,res) {
-    res.send('Hello Sir')
+
+app.get('/atanu', (req, res)=>{
+    res.send('Atanu babu ke Like Karo follow karo')
 })
 
-app.listen(5000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.listen(5000, ()=>{
+    console.log('Server Running on port 5000');
+})
