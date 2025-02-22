@@ -1,23 +1,22 @@
 const mongoose = require('mongoose');
 
-const DATABASE_URL = "mongodb://localhost:27017"
-
+const DATABASE_URL = "mongodb://localhost:27017/mydatabase";
 
 mongoose.connect(DATABASE_URL, {
     useNewUrlParser: true,
-    useUnifiedTopology:true
+    useUnifiedTopology: true
 });
 
-const database = mongoose.connection;
+const db = mongoose.connection;
 
-database.on('connected', ()=> {
-    console.log('Connected to MongoDB');
-})
+db.on('connected', () => {
+    console.log('✅ MongoDB Connected!');
+});
 
-database.on('error', ()=> {
-    console.log('MongoDB Connection Error');
-})
+db.on('error', (error) => {
+    console.log('❌ MongoDB Connection Error:', error);
+});
 
-database.on('disconnected', ()=> {
-    console.log('MongoDB Disconnected');
-})
+db.on('disconnected', () => {
+    console.log('⚠️ MongoDB Disconnected!');
+});
