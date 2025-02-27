@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const DATABASE_URL = "mongodb://localhost:27017/mydatabase";
+const DATABASE_URL = "mongodb://localhost:27017/database";
 
 mongoose.connect(DATABASE_URL, {
     useNewUrlParser: true,
